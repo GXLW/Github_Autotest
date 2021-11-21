@@ -9,7 +9,7 @@ class LoginPage(BasePage, LoginPageLocators):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        assert self.browser.url in "login", 'Wrong url'
+        assert self.browser.current_url.find("login") != 1, 'Wrong url'
 
     def should_be_login_form(self):
         assert self.login_form(), 'Login field is missing'
